@@ -2,6 +2,7 @@
 var baseBetAmount = 0.00000001; // The base amount that you want to bet.
 var betMultiplier = 2; // the multiplier value used.
 var supportedLoseSequenceBetsLength = 20; // After 20 consecutive loose the script stops
+var stopLoss = 10; //Maximum bet on Satoshi
 var patternPlayPeriodInSeconds = 100; // The period of playing a single pattern.
 var maxGain = 0.00001; // The scripts stop when a maximum number of satoshi have benn earned.
 var betsPatternsLengthInDecimal = [4];
@@ -200,7 +201,7 @@ $('#double_your_btc_bet_lose').bind("DOMSubtreeModified", function (event) {
             currentLoseSequenceBetsCounter + ' || Current bet: ' + bets[currentBetIndex] +
             ' || Max lose consecutive: ' + maxLoseSequenceBetsCounter + ' || Max satoshi bet: ' + maxBet + ' || Wagered: ' + satWagered.toFixed(8));
 
-        if (currentLoseSequenceBetsCounter < supportedLoseSequenceBetsLength) {
+        if (currentLoseSequenceBetsCounter < supportedLoseSequenceBetsLength && maxBet < stopLoss) {
             // We still can bet supporting another lose bet, so we build the next bet.
             // We load next bet index from betsPattern:
             currentBetIndex = parseInt(betsPatterns[currentPattern][currentPatternSequenceIndex].charAt(currentInnerSequencePosition));
