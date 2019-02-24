@@ -11,7 +11,7 @@ var patternPlayPeriodInSeconds = 100; // The period of playing a single pattern.
 var maxGain = 0.00001; // The scripts stop when a maximum number of satoshi have benn earned.
 ```
 # Instruction
-Please support me by creating your account through this link: https://freebitco.in/?r=8717825
+Please support me by creating your account through this link: https://freebitco.in/?r=8468234
 
 To run this bot:
 1. open up your Google Chrome Console by pressing "Ctrl+Shift+J" (On Firefox Press F12 and navigate to the console).
