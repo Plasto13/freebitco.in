@@ -201,7 +201,7 @@ $('#double_your_btc_bet_lose').bind("DOMSubtreeModified", function (event) {
             currentLoseSequenceBetsCounter + ' || Current bet: ' + bets[currentBetIndex] +
             ' || Max lose consecutive: ' + maxLoseSequenceBetsCounter + ' || Max satoshi bet: ' + maxBet + ' || Wagered: ' + satWagered.toFixed(8));
 
-        if (currentLoseSequenceBetsCounter < supportedLoseSequenceBetsLength && maxBet < stopLoss) {
+        if (currentLoseSequenceBetsCounter < supportedLoseSequenceBetsLength || maxBet < stopLoss) {
             // We still can bet supporting another lose bet, so we build the next bet.
             // We load next bet index from betsPattern:
             currentBetIndex = parseInt(betsPatterns[currentPattern][currentPatternSequenceIndex].charAt(currentInnerSequencePosition));
